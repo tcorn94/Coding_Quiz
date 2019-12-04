@@ -6,7 +6,7 @@ body{
 
 .container{
 width: 960px;
-height: 500px;
+height: 800px;
 background-color: cornflowerblue;
 border: solid 2px black;
 text-align: center;
@@ -14,4 +14,14 @@ margin: 0 auto;
 margin-top: 90px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+}
+
+.timer{
+    width: 500px;
+    height: 50px;
+    background-color: rgb(241, 203, 77);
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    border: solid 2px black;
 }
