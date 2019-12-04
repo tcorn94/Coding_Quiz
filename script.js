@@ -1,23 +1,23 @@
 var quiz = [
-{"q:", "a:"}
+{"q: Sugar gliders are members of the marsupial class, "a: true"}
 
-{"q:", "a:"}
+{"q:Edgar Allan Poe did NOT write which of the following: ", "a: 'Because I could not stop for Death'"}
 
-{"q:", "a:"}
+{"q:The dog Blue from Blues Clues was:", "a: female"}
 
-{"q:", "a:"}
+{"q:Which of the following was the capital of Japan prior to Tokyo?", "a: Kyoto"}
 
-{"q:", "a:"}
+{"q:Which U.S. President threw up on the Japanese prime minister? ", "a: George H. W. Bush"}
 
-{"q:", "a:"}
+{"q:Black ants can live for up to 15 years", "a: true"}
 
-{"q:", "a:"}
+{"q: As of 2017, which US state's main export was Zinc?", "a: Alaska"}
 
-{"q:", "a:"}
+{"q:What is Lady Gaga's real first name?", "a: Stefani"}
 
-{"q:", "a:"}
+{"q:During which year was the film Titanic released?", "a: 1997"}
 
-{"q:", "a:"}
+{"q: During mating, the female praying mantis does what?", "a: Bites off the male's head."}
 
 
 
