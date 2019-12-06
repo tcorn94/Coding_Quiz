@@ -66,16 +66,16 @@ for (var i = 0; i < quiz.length; i++) {
 
  if (answer === quiz[i].a) {
 
-     alert("You are correct!");
+     ("You are correct!");
      score ++;
 
   
  }
  else {
-         alert("Sorry, try again!");
+         ("Sorry, try again!");
      }
 }
 
 
 
-alert("you got" + score + "/" + quiz.length)
+("you got" + score + "/" + quiz.length)
