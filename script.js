@@ -9,6 +9,25 @@ var screen = document.querySelector(".container");
 
 var secondsLeft = 80;
 
+
+function startGame(){
+
+}
+
+function setNext(){}
+
+
+
+function answerchoice(){
+
+  
+}
+
+
+
+
+
+
 function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
@@ -58,23 +77,39 @@ var quiz = [
 
 ]
 
-var score = 0 
+var score = 0;
+//hook into main div for quiz to append results
+var quizdiv = document.querySelector(".container");
+var answerselect = document.querySelector(".buttons");
+var beginner = document.querySelector("#buttonbegin");
+var questionspot = document.querySelector("#questions");
+//try to set text content of questions div and buttons
+
 
 for (var i = 0; i < quiz.length; i++) {
+//try to make the buttons onclick triggers
+ var answer = onclick(quiz[i].q);
 
- var answer = confirm(quiz[i].q);
+ beginner.onclick();{
+  questionspot.textContent = (quiz[i].q);
+  answerselect.textContent = (quiz[i].a);
+
+
 
  if (answer === quiz[i].a) {
 
-     ("You are correct!");
-     score ++;
+     quizdiv.textContent = "You are correct!";
+     quizdiv.textContent = score ++;
 
   
  }
  else {
-         ("Sorry, try again!");
+         quizdiv.textContent = "Sorry, try again!";
      }
 }
+
+}
+
 
 
 

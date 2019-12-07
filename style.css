@@ -6,7 +6,7 @@ body{
 
 .container{
 width: 960px;
-height: 800px;
+height: 1000px;
 background-color: cornflowerblue;
 border: solid 2px black;
 text-align: center;
@@ -35,10 +35,27 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     margin: 0 auto;
     border: solid 2px black;
+    margin: 20px;
+    margin-left: 160px;
 }
 
 #btn1, #btn2, #btn3, #btn4{
-    widows: 600px;
-    height: 90px;
+    width: 450px;
+    height: 60px;
     margin: 20px;
+}
+
+#questions{
+    height: 60px;
+    width: 450px;
+    margin: 20px;
+    border: solid 2px black;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(241, 203, 77);
+
+}
+
+button:hover{
+    background-color: skyblue;
 }
