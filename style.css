@@ -18,15 +18,15 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 .timer{
     width: 500px;
-    height: 100px;
+    height: 40px;
     background-color: rgb(241, 203, 77);
     color: black;
     text-align: center;
     margin: 0 auto;
     border: solid 2px black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: xx-large;
-    padding: 20px;
+    font-size: medium;
+    padding: 10px;
 }
 
 .buttons{
@@ -64,4 +64,13 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 button:hover{
     background-color: skyblue;
+}
+
+.scorespot{
+    width: 70px;
+    height: 40px;
+    background-color: blanchedalmond;
+    color: black;
+    border: black 2px solid;
+
 }

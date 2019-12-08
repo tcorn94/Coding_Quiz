@@ -1,41 +1,90 @@
 
 
 
-//create timer function
+//define all vgolabal variables
+
 
 var timeEl = document.querySelector(".timer");
 var screen = document.querySelector(".container");
 var questionspot = document.querySelector("#questions");
 var questionoptions = document.querySelector(quiz);
+let randomquestion, currentquestion; 
 
+
+let answerspot = document.getElementById("#btn1", "#btn2", "#btn3", "#btn4");
+
+var score = 0;
+let scoreshow = document.getElementById(".scorespot");
+scoreshow.textContent = "score" + score; 
 
 var secondsLeft = 80;
 
 var beginner = document.querySelector("#buttonbegin");
 beginner.addEventListener("click", startGame());
 
-for (var i = 0; i < quiz.length; i++){
+//add audio file for correct onlick event
+function play(){
+  var audio = document.getElementById("audio");
+  audio.play();
+            }
+
+
+
+
 function startGame(){
-  
  
-  questionspot.textContent = (quiz[i].q);
-  answerselect.textContent = (quiz[i].a);
+ randomquestion = quiz.sort(() => Math.random() - .5);
+ currentquestion = 0;
+ 
+  setNext();
+ 
+
  
   }
+
+
+
+
+function setNext(){
+
+showquestion(randomquestion[currentquestion]);
 }
 
-function showquestion() {
-  
+function showquestion(question){
+  questionspot.innerHTML = quiz.q;
+  quiz.a.forEach(answer => {
+    
+  answerspot.textContent = a.text;
+    
+    if (a.correct === true) {
 
-  questionspot.innerHTML = (quiz[i].a);
-  }
+      score++;
 
+      secondsLeft + 10;
 
-function setNext(){}
+      play();
 
+      setNext();
+
+    }
+
+    else {
+      score --;
+
+      secondsLeft - 10;
+
+      setNext();
+
+    }
+    
+  });
+}
 
 
 function answerchoice(){
+  //create onlick function for button
+  answerspot.addEventListener
+  
 
 
 }
@@ -52,25 +101,15 @@ beginner.onclick = function setTime() {
 
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
-      sendMessage();////change send message to end game
+      ////change send message to end game
     }
 
   },1000);// 1000milisecond interval between secondsleft--
 }
-//change send message to end game
-function sendMessage() {
-  timeEl.textContent = " ";
 
-  var imgEl = document.createElement("img");
 
-  imgEl.setAttribute("src", "images/image_1.jpg");
-  mainEl.appendChild(imgEl); //append end game
 
-}
-
-setTime();
-
-///beginning of quiz formatting
+///my questions and answers
 
 var quiz = [
 
@@ -102,40 +141,27 @@ var quiz = [
 
 ]
 
-var score = 0;
-//hook into main div for quiz to append results
-var quizdiv = document.querySelector(".container");
-var answerselect = document.querySelector(".buttons");
-
-
-//try to set text content of questions div and buttons
-
-
-for (var i = 0; i < quiz.length; i++) {
-//try to make the buttons onclick triggers
- var answer = onclick(quiz[i].q);
-
-
-  questionspot.textContent = (quiz[i].q);
-  answerselect.textContent = (quiz[i].a);
 
 
 
- if (answer === quiz[i].a) {
 
-     quizdiv.textContent = "You are correct!";
-     quizdiv.textContent = score ++;
+
+
+ 
+
+ function finalscore(){
+  
+  
+  
+  
+  
+  scoreshow.textContent = ("you got" + score + "/" + quiz.length)
+
+  //parse to local storage
+  //clear quizdiv
+  //parse out recent scores
+
 
   
  }
- else {
-         quizdiv.textContent = "Sorry, try again!";
-     }
-}
 
-
-
-
-
-
-("you got" + score + "/" + quiz.length)
