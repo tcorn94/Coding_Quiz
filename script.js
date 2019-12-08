@@ -5,14 +5,31 @@
 
 var timeEl = document.querySelector(".timer");
 var screen = document.querySelector(".container");
+var questionspot = document.querySelector("#questions");
+var questionoptions = document.querySelector(quiz);
 
 
 var secondsLeft = 80;
 
+var beginner = document.querySelector("#buttonbegin");
+beginner.addEventListener("click", startGame());
 
+for (var i = 0; i < quiz.length; i++){
 function startGame(){
-
+  
+ 
+  questionspot.textContent = (quiz[i].q);
+  answerselect.textContent = (quiz[i].a);
+ 
+  }
 }
+
+function showquestion() {
+  
+
+  questionspot.innerHTML = (quiz[i].a);
+  }
+
 
 function setNext(){}
 
@@ -20,7 +37,7 @@ function setNext(){}
 
 function answerchoice(){
 
-  
+
 }
 
 
@@ -28,7 +45,7 @@ function answerchoice(){
 
 
 
-function setTime() {
+beginner.onclick = function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds remaining";
@@ -57,21 +74,29 @@ setTime();
 
 var quiz = [
 
-  {q: "Sugar gliders are members of the marsupial class", a: true},
+  {q: "Sugar gliders are members of the marsupial class", 
+  a: [ {text: "true", correct: true},
+        {text: "false", correct: false}]},
 
- {q: "Edgar Allan Poe did NOT write which of the following:", a: "because I could not stop for death"},
+
  
- {q: "The dog Blue from Blues Clues was", a: "female"},
+ {q: "The dog Blue from Blues Clues was", a: [ {text: "female", correct: true}, {text: "male", correct:false}]},
 
- {q: "Which of the following was the capital of Japan prior to Tokyo?", a: "Kyoto"},
+ {q: "Which of the following was the capital of Japan prior to Tokyo?",  a: [ {text: "Kyoto", correct: true},
+ {text: "Tokyo", correct: false}, { text: "Nippori", correct: false}, {text: "Hokkaido", correct: false}]},
  
- {q: "Which U.S. President threw up on the Japanese prime minister?", a: "George H. W. Bush"},
-
- {q: "Black ants can live for up to 15 years", a: true},
  
- {q: "As of 2017, which US state's main export was Zinc?", a: "Alaska"},
 
- {q: "During which year was the film Titanic released?:", a: "1997"},
+ {q: "Black ants can live for up to 15 years",   a: [ {text: "true", correct: true},
+ {text: "false", correct: false}]},
+ 
+ {q: "As of 2017, which US state's main export was Zinc?", a: [ {text: "Alaska", correct: true},
+ {text: "Kentucky", correct: false}, { text: "California", correct: false}, {text: "Utah", correct: false}]},
+ 
+
+ {q: "During which year was the film Titanic released?:", a:[ {text: "1997", correct: true},
+ {text: "1994", correct: false}, { text: "1999", correct: false}, {text: "1993", correct: false}]}
+ 
 
 
 
@@ -81,8 +106,8 @@ var score = 0;
 //hook into main div for quiz to append results
 var quizdiv = document.querySelector(".container");
 var answerselect = document.querySelector(".buttons");
-var beginner = document.querySelector("#buttonbegin");
-var questionspot = document.querySelector("#questions");
+
+
 //try to set text content of questions div and buttons
 
 
@@ -90,7 +115,7 @@ for (var i = 0; i < quiz.length; i++) {
 //try to make the buttons onclick triggers
  var answer = onclick(quiz[i].q);
 
- beginner.onclick();{
+
   questionspot.textContent = (quiz[i].q);
   answerselect.textContent = (quiz[i].a);
 
@@ -108,7 +133,7 @@ for (var i = 0; i < quiz.length; i++) {
      }
 }
 
-}
+
 
 
 
