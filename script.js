@@ -52,9 +52,8 @@ function increase(){
 }
 
 function decrease(){
-  score--;
-  let scoreshow = document.getElementById("scorespot");
- scoreshow.textContent = "current score " + score; 
+ 
+ 
   secondsLeft -= 10;
   timeEl.textContent = secondsLeft + " seconds remaining";
 }
@@ -106,7 +105,13 @@ document.getElementById("ants" + i).remove();
 
 }
 current++;
+
+if (current == quiz.length){
+  finalscore();
+}
 generateAnswers(current);
+
+
 }
 
 
@@ -131,10 +136,10 @@ function answerchoice(){
 
 
 }
-
+var timerInterval;
 
  function setTime() {
-  var timerInterval = setInterval(function() {
+     timerInterval = setInterval(function() {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds remaining";
 
@@ -151,23 +156,40 @@ function answerchoice(){
 
 
  function finalscore(){
+
+  clearInterval(timerInterval);
  
   
-  var mainarea = document.getElementById("#questions");
+  var mainarea = document.getElementById("questionbox");
   
   $(".buttons").empty();
-  mainarea.empty();
+  mainarea.innerHTML = "";
 
+  var allScores;
 
-  localStorage.setItem("score", JSON.stringify(score));
+  if (localStorage.getItem("saveScore")){
+    allScores = JSON.parse(localStorage.getItem("saveScore"));
+  }
+  else {
+    allScores = []
+  }
+
+  allScores.push(score);
+
+  localStorage.setItem("saveScore", JSON.stringify(allScores));
 
   ///clear div where answer buttons are and reparse append scores
 
-  var data = JSON.parse(localStorage.getItem(score));
+  var data = JSON.parse(localStorage.getItem("saveScore"));
 
-  $(".buttons").text(data);
+  var scorelist = "Your scores "; 
+  for (i=0; i<data.length; i++) {
+    scorelist += data[i] + "  ,  ";
+  }
 
-$("#questionbox").text = ("You got" + score + "/" + quiz.length);
+  mainarea.innerHTML = scorelist;
+
+
 
   //parse to local storage
   //clear quizdiv
