@@ -12,21 +12,25 @@
     <div class="container">
 <h1> Welcome to the Random Quiz </h1>
 <h2>Time is tickin'! Better get to it!</h2>
-<h3><button id="buttonbegin">Start!</button></h3>
+<h3><button id="buttonbegin" onclick="startGame()">Start!</button></h3>
 <h3><button id="buttonnext">Next</button></h3>
 <div class="timer"> 
-    <div class="scorespot"></div>
+    <div id="scorespot"></div>
 </div>
 <hr>  
 
 
-<div id="questions"></div>
+<div id="questions">
+    <p id="questionbox"></p>
+</div>
 
 <div class="buttons">
-<button id= "btn1"></button>
+    <form id="answers"></form>
+<!--<button id= "btn1"></button>
 <button id= "btn2"></button>
 <button id= "btn3"></button>
 <button id= "btn4"></button>
+-->
 </div>
 
 
@@ -37,5 +41,9 @@
 <script src="script.js">
 <audio id="audio" src="Correct-answer.mp3" ></audio>
 </script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
 </body>
 </html>
