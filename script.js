@@ -43,6 +43,22 @@ var score = 0;
 
 var secondsLeft = 80;
 
+function increase(){
+  score++;
+  let scoreshow = document.getElementById("scorespot");
+ scoreshow.textContent = "current score " + score; 
+  secondsLeft += 10;
+  timeEl.textContent = secondsLeft + " seconds remaining";
+}
+
+function decrease(){
+  score--;
+  let scoreshow = document.getElementById("scorespot");
+ scoreshow.textContent = "current score " + score; 
+  secondsLeft -= 10;
+  timeEl.textContent = secondsLeft + " seconds remaining";
+}
+
 var beginner = document.querySelector("#buttonbegin");
 
 
@@ -68,17 +84,7 @@ function play(){
                 buttons.onclick = nextquestion;
                 
                 document.getElementById("answers").append(buttons);
-
-                
-
-
-              
         
-
-
-
-
-
 
               }
               
@@ -87,11 +93,12 @@ function play(){
 
 
 function nextquestion(e) {
-if (this.correct){
-
+if (this.getAttribute("correct") == "true"){
+play();
+increase();
 }
 else {
-
+decrease();
 }
 for (i=0; i < quiz[current].a.length; i++){
 
@@ -109,49 +116,12 @@ function startGame(){
  setTime();
  
  let scoreshow = document.getElementById("scorespot");
- scoreshow.innerHTML = "score" + score; 
+ scoreshow.innerHTML = "current score " + score; 
  generateAnswers(0);
 
  
   }
 
-
-
-
-function setNext(){
-
-showquestion();
-}
-
-function showquestion(question){
-  questionspot.innerHTML = quiz.q;
-  quiz.a.forEach(answer => {
-    
-  answerspot.textContent = a.text;
-    
-    if (a.correct === true) {
-
-      score++;
-
-      secondsLeft + 10;
-
-      play();
-
-      setNext();
-
-    }
-
-    else {
-      score --;
-
-      secondsLeft - 10;
-
-      setNext();
-
-    }
-    
-  });
-}
 
 
 function answerchoice(){
@@ -169,9 +139,7 @@ function answerchoice(){
     timeEl.textContent = secondsLeft + " seconds remaining";
 
     if(secondsLeft === 0) {
-     // clearInterval(timerInterval);
-      //end other functions and show final score
-      //finalscore();
+     finalscore();
 
     }
 
@@ -183,8 +151,13 @@ function answerchoice(){
 
 
  function finalscore(){
-  //returns/ends quiz function when the array object has been fully looped
+ 
+  
+  var mainarea = document.getElementById("#questions");
+  
   $(".buttons").empty();
+  mainarea.empty();
+
 
   localStorage.setItem("score", JSON.stringify(score));
 
@@ -192,13 +165,9 @@ function answerchoice(){
 
   var data = JSON.parse(localStorage.getItem(score));
 
-  $(data).append(".buttons");
+  $(".buttons").text(data);
 
-
-  
-  
-  
-  questionspot.textContent = ("you got" + score + "/" + quiz.length);
+$("#questionbox").text = ("You got" + score + "/" + quiz.length);
 
   //parse to local storage
   //clear quizdiv

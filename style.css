@@ -43,11 +43,37 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 20px;
 }
 
-#btn1, #btn2, #btn3, #btn4{
+#ants1{
     width: 450px;
     height: 60px;
     margin: 20px;
     padding: 20px;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#ants0{
+    width: 450px;
+    height: 60px;
+    margin: 20px;
+    padding: 20px;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#ants2{
+    width: 450px;
+    height: 60px;
+    margin: 20px;
+    padding: 20px;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#ants3{
+    width: 450px;
+    height: 60px;
+    margin: 20px;
+    padding: 20px;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #questions{
